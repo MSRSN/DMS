@@ -1,0 +1,23 @@
+packages:
+  - "github.com/graniticio/granitic/v2/ws/handler"
+  - "myapp/endpoints/artist"
+  - "myapp/endpoints/weather"
+
+components:
+
+  artistHandler:
+    type: handler.WsHandler
+    HTTPMethod: GET
+    Logic:
+      type: artist.GetLogic
+    PathPattern: "^/artist"
+  
+  weatherLogic:
+    type: weather.GetLogic
+    ApiKey: conf:Service.ApiKey
+    City: conf:Service.City
+  weatherHandler:
+    type: handler.WsHandler
+    HTTPMethod: GET
+    Logic: ref:weatherLogic
+    PathPattern: "^/weather"

@@ -1,0 +1,24 @@
+Facilities:
+  HTTPServer: true
+  JSONWs: true
+  RuntimeCtl: true
+JSONWs:
+  ResponseWriter:
+    DefaultHeaders:
+      Access-Control-Allow-Origin: "*"
+      Content-Type: "application/json; charset=utf-8"
+      Access-Control-Allow-Methods: "GET, PUT, POST, DELETE"
+      Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, AUTH_TOKEN"
+
+HTTPServer:
+  Address: 0.0.0.0
+  Port: 4004
+  AccessLogging: true
+  AccessLog:
+    LogLinePreset: "framework"
+ApplicationLogger:
+  GlobalLogLevel: INFO
+
+Service:
+  ApiKey: "9ea1d1bc0bccfd9d3b7df5b8bf224cff"
+  City: "Kathmandu"
